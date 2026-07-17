@@ -6,6 +6,33 @@ import { FiGithub } from 'react-icons/fi'
 
 const projects = [
   {
+    tag: 'Full Stack · SaaS',
+    tagColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+    title: 'PanelX',
+    subtitle: 'Facade Panel Management Platform',
+    url: null,
+    problem:
+      'Construction teams managing facade panels rely on manual CAD file handling, spreadsheets, and disconnected photo libraries — making panel tracking, validation, and reporting slow and error-prone across large projects.',
+    solution:
+      'Built a full-stack SaaS platform that processes DWG/DXF CAD files through a Celery pipeline, extracts panel data into PostgreSQL, and renders drawings in a browser-based Three.js viewer — with Dropbox sync, Excel/PDF import, photo reports, and real-time WebSocket notifications.',
+    stack: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Three.js', 'Celery', 'Dropbox API', 'AWS S3', 'Redis', 'Docker'],
+    features: [
+      'Celery pipeline for DWG/DXF CAD processing and panel data extraction into PostgreSQL',
+      'Browser-based Three.js viewer for interactive facade drawing rendering',
+      'JWT authentication with RBAC — 5 roles and 12 permissions',
+      'Dropbox auto-sync, Excel/PDF data import, and photo library with PDF report generation',
+      'Advanced panel search, data validation, and Hebrew/English RTL support',
+      'AI assistant (OpenAI), mobile scanner view, and real-time WebSocket notifications',
+    ],
+    outcomes: [
+      { metric: 'CAD',    label: 'DWG/DXF pipeline'       },
+      { metric: '5 roles', label: 'RBAC with 12 perms'    },
+      { metric: '3D',     label: 'Three.js viewer'        },
+      { metric: 'RTL',    label: 'Hebrew + English'       },
+    ],
+    gradient: 'from-amber-600/20 via-orange-500/10 to-transparent',
+  },
+  {
     tag: 'AI SaaS · Production',
     tagColor: 'text-primary-400 bg-primary-500/10 border-primary-500/20',
     title: 'BearisterAI',

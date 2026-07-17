@@ -57,7 +57,7 @@ const projects = [
       { metric: '99.5%',  label: 'service uptime on AWS'  },
       { metric: 'Stripe', label: 'live subscription billing' },
     ],
-    gradient: 'from-primary-600/20 via-accent-purple/10 to-transparent',
+    gradient: 'from-primary-600/20 via-accent-cyan/10 to-transparent',
   },
   {
     tag: 'Web App · Django',
@@ -87,7 +87,7 @@ const projects = [
   },
   {
     tag: 'Full Stack · React',
-    tagColor: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+    tagColor: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
     title: 'Society Management System',
     subtitle: 'Residential Society Administration Portal',
     url: null,
@@ -110,7 +110,7 @@ const projects = [
       { metric: 'REST',   label: 'fully documented API'       },
       { metric: 'React',  label: 'full-stack delivery'        },
     ],
-    gradient: 'from-cyan-600/15 via-primary-600/10 to-transparent',
+    gradient: 'from-sky-600/15 via-primary-600/10 to-transparent',
   },
 ]
 
@@ -122,19 +122,17 @@ function ProjectCard({ project, index, inView }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12 }}
-      className="glass-card overflow-hidden border border-white/[0.06] hover:border-white/10 transition-all duration-300"
+      className="glass-card overflow-hidden border border-white/[0.06] hover:border-primary-400/25 hover:-translate-y-0.5 transition-all duration-300"
     >
-      {/* Top gradient stripe */}
       <div className={`h-1 bg-gradient-to-r ${project.gradient.replace('via-', 'to-').split(' to-transparent')[0]}`} />
 
       <div className="p-6 sm:p-8">
-        {/* Header */}
         <div className="flex items-start justify-between gap-4 mb-6">
           <div>
-            <span className={`inline-flex text-xs font-medium px-2.5 py-1 rounded-full border mb-3 ${project.tagColor}`}>
+            <span className={`inline-flex text-xs font-medium px-2.5 py-1 rounded-lg border mb-3 ${project.tagColor}`}>
               {project.tag}
             </span>
-            <h3 className="text-xl font-bold text-white">{project.title}</h3>
+            <h3 className="text-xl font-display font-bold text-white tracking-tight">{project.title}</h3>
             <p className="text-sm text-slate-500 mt-0.5">{project.subtitle}</p>
           </div>
           {project.url && (
@@ -142,7 +140,7 @@ function ProjectCard({ project, index, inView }) {
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="flex-shrink-0 p-2 rounded-lg border border-white/[0.08] text-slate-400 hover:text-white hover:border-white/20 transition-all"
+              className="flex-shrink-0 p-2 rounded-xl border border-white/[0.08] text-slate-400 hover:text-white hover:border-primary-400/40 hover:bg-primary-500/10 transition-all"
               aria-label="Live link"
             >
               <HiExternalLink size={16} />
@@ -150,39 +148,35 @@ function ProjectCard({ project, index, inView }) {
           )}
         </div>
 
-        {/* Problem / Solution */}
         <div className="grid sm:grid-cols-2 gap-4 mb-6">
-          <div className="p-4 rounded-xl bg-red-500/5 border border-red-500/10">
-            <p className="text-xs font-semibold text-red-400 uppercase tracking-widest mb-2">Problem</p>
+          <div className="p-4 rounded-xl bg-accent-coral/[0.06] border border-accent-coral/15">
+            <p className="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-2 font-display">Problem</p>
             <p className="text-sm text-slate-400 leading-relaxed">{project.problem}</p>
           </div>
-          <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
-            <p className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Solution</p>
+          <div className="p-4 rounded-xl bg-primary-500/[0.06] border border-primary-500/15">
+            <p className="text-xs font-semibold text-primary-300 uppercase tracking-widest mb-2 font-display">Solution</p>
             <p className="text-sm text-slate-400 leading-relaxed">{project.solution}</p>
           </div>
         </div>
 
-        {/* Outcomes */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           {project.outcomes.map(({ metric, label }) => (
-            <div key={label} className="text-center p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <div className="text-lg font-bold gradient-text">{metric}</div>
+            <div key={label} className="text-center p-3 rounded-xl bg-white/[0.025] border border-white/[0.05]">
+              <div className="text-lg font-display font-bold gradient-text">{metric}</div>
               <div className="text-xs text-slate-500 mt-0.5 leading-tight">{label}</div>
             </div>
           ))}
         </div>
 
-        {/* Tech stack */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {project.stack.map((t) => (
             <span key={t} className="skill-badge">{t}</span>
           ))}
         </div>
 
-        {/* Expandable features */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors mt-2"
+          className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-primary-300 transition-colors mt-2"
         >
           {expanded ? <HiChevronUp size={14} /> : <HiChevronDown size={14} />}
           {expanded ? 'Hide' : 'Show'} key features

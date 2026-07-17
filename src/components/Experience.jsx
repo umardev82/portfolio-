@@ -94,25 +94,25 @@ export default function Experience() {
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 glass-card p-6 sm:p-8 hover:border-white/10 transition-all duration-300">
+                <div className="flex-1 glass-card p-6 sm:p-8 hover:border-primary-400/25 transition-all duration-300">
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         {exp.type === 'education'
                           ? <HiAcademicCap size={16} className="text-amber-400" />
-                          : <HiBriefcase size={16} className="text-primary-400" />
+                          : <HiBriefcase size={16} className="text-primary-300" />
                         }
-                        <h3 className="font-bold text-white text-base">{exp.role}</h3>
+                        <h3 className="font-display font-bold text-white text-base">{exp.role}</h3>
                         {exp.current && (
-                          <span className="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
+                          <span className="px-2 py-0.5 text-[10px] font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">
                             Current
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-primary-400 font-medium">{exp.org}</p>
+                      <p className="text-sm text-primary-300 font-medium">{exp.org}</p>
                       <p className="text-xs text-slate-500 mt-0.5">{exp.location}</p>
                     </div>
-                    <span className="text-xs font-mono text-slate-500 bg-white/[0.03] px-3 py-1.5 rounded-lg border border-white/[0.05] flex-shrink-0">
+                    <span className="text-xs font-mono text-slate-500 bg-white/[0.03] px-3 py-1.5 rounded-lg border border-white/[0.06] flex-shrink-0">
                       {exp.period}
                     </span>
                   </div>

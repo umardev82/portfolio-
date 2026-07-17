@@ -12,8 +12,8 @@ const services = [
     desc: 'End-to-end intelligent chatbots and conversational agents with memory, tool-calling, and retrieval-augmented generation — grounded in your actual documents and data.',
     tech: ['LangChain', 'OpenAI GPT-4', 'Qdrant', 'RAG Pipelines', 'FastAPI', 'Prompt Engineering'],
     value: 'Automate expert-level Q&A, reduce support overhead, and unlock your knowledge base for instant semantic search.',
-    accent: 'from-primary-600/20 to-accent-purple/10',
-    border: 'group-hover:border-primary-500/40',
+    accent: 'from-primary-600/25 to-accent-cyan/10',
+    border: 'group-hover:border-primary-400/40',
   },
   {
     icon: HiServer,
@@ -22,8 +22,8 @@ const services = [
     desc: 'Production-grade REST APIs and backend services engineered for performance — with query optimization, caching layers, and authentication baked in from day one.',
     tech: ['FastAPI', 'Django REST Framework', 'PostgreSQL', 'Redis', 'Celery', 'JWT Auth'],
     value: 'APIs that handle real traffic, stay fast under load, and give your frontend team clean, documented contracts.',
-    accent: 'from-accent-cyan/15 to-primary-600/10',
-    border: 'group-hover:border-cyan-500/40',
+    accent: 'from-accent-cyan/20 to-primary-600/10',
+    border: 'group-hover:border-accent-cyan/40',
   },
   {
     icon: HiCode,
@@ -32,8 +32,8 @@ const services = [
     desc: 'Complete web applications — from database schema to React UI — with role-based auth, automated business logic, and clean API-to-frontend integration.',
     tech: ['React.js', 'Django', 'DRF', 'PostgreSQL', 'Tailwind CSS', 'Swagger / OpenAPI'],
     value: 'Ship a full product without stitching together a fragmented team — one engineer who owns the whole stack.',
-    accent: 'from-accent-purple/15 to-primary-600/10',
-    border: 'group-hover:border-purple-500/40',
+    accent: 'from-accent-coral/15 to-primary-600/10',
+    border: 'group-hover:border-accent-coral/35',
   },
   {
     icon: HiLink,
@@ -42,7 +42,7 @@ const services = [
     desc: 'Reliable API design following REST best practices, plus seamless integration with payment gateways (Stripe), external services, and legacy systems.',
     tech: ['FastAPI', 'Django DRF', 'Stripe', 'Postman', 'OpenAPI', 'Webhook Handlers'],
     value: 'Connect your systems cleanly — with proper error handling, idempotency, and documentation your team will thank you for.',
-    accent: 'from-emerald-500/10 to-accent-cyan/10',
+    accent: 'from-emerald-500/15 to-accent-cyan/10',
     border: 'group-hover:border-emerald-500/40',
   },
   {
@@ -52,8 +52,8 @@ const services = [
     desc: 'Full-stack SaaS products combining LLM capabilities with subscription billing, user management, and cloud deployment — ready for paying customers from launch.',
     tech: ['FastAPI', 'LangChain', 'Stripe', 'AWS EC2/S3/RDS', 'Docker', 'GitHub Actions'],
     value: 'Go from idea to a monetizable, cloud-deployed AI product without accumulating tech debt along the way.',
-    accent: 'from-orange-500/10 to-primary-600/10',
-    border: 'group-hover:border-orange-500/40',
+    accent: 'from-accent-peach/15 to-primary-600/10',
+    border: 'group-hover:border-accent-peach/40',
   },
 ]
 
@@ -61,7 +61,7 @@ export default function Services() {
   const [ref, inView] = useInView()
 
   return (
-    <section id="services" className="py-24 px-4 sm:px-6 bg-dark-800/40">
+    <section id="services" className="py-24 px-4 sm:px-6 bg-dark-800/35">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -88,15 +88,15 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`group glass-card p-6 flex flex-col gap-5 border border-white/[0.06] hover:bg-white/[0.04] transition-all duration-300 ${border}`}
+              className={`group glass-card p-6 flex flex-col gap-5 hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 ${border}`}
             >
-              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${accent} flex items-center justify-center border border-white/[0.06]`}>
-                <Icon size={20} className="text-white/80" />
+              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${accent} flex items-center justify-center border border-white/[0.07]`}>
+                <Icon size={20} className="text-white/85" />
               </div>
 
               <div>
-                <h3 className="font-semibold text-white text-base mb-1">{title}</h3>
-                <p className="text-xs text-primary-400 font-mono mb-3">{sub}</p>
+                <h3 className="font-display font-semibold text-white text-base mb-1">{title}</h3>
+                <p className="text-xs text-primary-300 font-mono mb-3">{sub}</p>
                 <p className="text-sm text-slate-400 leading-relaxed">{desc}</p>
               </div>
 
@@ -106,9 +106,9 @@ export default function Services() {
                 ))}
               </div>
 
-              <div className="mt-auto pt-4 border-t border-white/[0.05]">
+              <div className="mt-auto pt-4 border-t border-white/[0.06]">
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  <span className="text-emerald-400 font-medium">Business value: </span>
+                  <span className="text-primary-300 font-medium">Business value: </span>
                   {value}
                 </p>
               </div>

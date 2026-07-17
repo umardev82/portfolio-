@@ -10,9 +10,9 @@ import { FaAws } from 'react-icons/fa'
 const groups = [
   {
     label: 'AI / ML',
-    color: 'text-purple-400',
-    bg: 'from-purple-600/15 to-transparent',
-    border: 'border-purple-500/20',
+    color: 'text-accent-peach',
+    bg: 'from-accent-peach/10 to-transparent',
+    border: 'border-accent-peach/20',
     skills: [
       { name: 'LangChain',        level: 95 },
       { name: 'OpenAI GPT-4/3.5', level: 95 },
@@ -25,7 +25,7 @@ const groups = [
   },
   {
     label: 'Backend',
-    color: 'text-primary-400',
+    color: 'text-primary-300',
     bg: 'from-primary-600/15 to-transparent',
     border: 'border-primary-500/20',
     skills: [
@@ -40,9 +40,9 @@ const groups = [
   },
   {
     label: 'Frontend',
-    color: 'text-cyan-400',
-    bg: 'from-cyan-600/15 to-transparent',
-    border: 'border-cyan-500/20',
+    color: 'text-sky-300',
+    bg: 'from-sky-600/15 to-transparent',
+    border: 'border-sky-500/20',
     skills: [
       { name: 'React.js',     level: 75 },
       { name: 'Tailwind CSS', level: 80 },
@@ -52,7 +52,7 @@ const groups = [
   },
   {
     label: 'Databases',
-    color: 'text-emerald-400',
+    color: 'text-emerald-300',
     bg: 'from-emerald-600/15 to-transparent',
     border: 'border-emerald-500/20',
     skills: [
@@ -65,9 +65,9 @@ const groups = [
   },
   {
     label: 'DevOps & Cloud',
-    color: 'text-orange-400',
-    bg: 'from-orange-600/15 to-transparent',
-    border: 'border-orange-500/20',
+    color: 'text-accent-coral',
+    bg: 'from-accent-coral/10 to-transparent',
+    border: 'border-accent-coral/20',
     skills: [
       { name: 'AWS EC2/S3/RDS',    level: 83 },
       { name: 'Docker',            level: 85 },
@@ -83,12 +83,12 @@ const techIcons = [
   { icon: SiFastapi,       label: 'FastAPI',  color: '#059669' },
   { icon: SiDjango,        label: 'Django',   color: '#16a34a' },
   { icon: SiReact,         label: 'React',    color: '#22d3ee' },
-  { icon: SiPostgresql,    label: 'Postgres', color: '#6366f1' },
+  { icon: SiPostgresql,    label: 'Postgres', color: '#14b8a6' },
   { icon: SiRedis,         label: 'Redis',    color: '#ef4444' },
   { icon: SiDocker,        label: 'Docker',   color: '#3b82f6' },
   { icon: FaAws,           label: 'AWS',      color: '#f97316' },
   { icon: SiNginx,         label: 'Nginx',    color: '#16a34a' },
-  { icon: SiGithubactions, label: 'CI/CD',    color: '#a855f7' },
+  { icon: SiGithubactions, label: 'CI/CD',    color: '#f97066' },
   { icon: SiOpenai,        label: 'OpenAI',   color: '#ffffff' },
   { icon: SiFlask,         label: 'Flask',    color: '#94a3b8' },
   { icon: SiMysql,         label: 'MySQL',    color: '#fb923c' },
@@ -117,7 +117,7 @@ export default function Skills() {
   const [ref, inView] = useInView()
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 bg-dark-800/40">
+    <section id="skills" className="py-24 px-4 sm:px-6 bg-dark-800/35">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -136,12 +136,11 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Icon strip */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-4 mb-14"
+          className="flex flex-wrap justify-center gap-3 mb-14"
         >
           {techIcons.map(({ icon: Icon, label, color }, i) => (
             <motion.div
@@ -149,7 +148,7 @@ export default function Skills() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: i * 0.04 }}
-              className="flex flex-col items-center gap-2 p-4 rounded-xl glass-card hover:bg-white/[0.05] transition-all group"
+              className="flex flex-col items-center gap-2 p-4 rounded-xl glass-card hover:bg-white/[0.06] hover:-translate-y-0.5 transition-all group"
             >
               <Icon size={26} style={{ color }} className="group-hover:scale-110 transition-transform" />
               <span className="text-xs text-slate-500">{label}</span>
@@ -157,7 +156,6 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        {/* Skill bars */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {groups.map((group, gi) => (
             <motion.div
@@ -167,7 +165,7 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: 0.15 + gi * 0.08 }}
               className={`glass-card p-6 border ${group.border} bg-gradient-to-br ${group.bg}`}
             >
-              <h3 className={`text-sm font-semibold uppercase tracking-widest mb-5 ${group.color}`}>
+              <h3 className={`text-sm font-display font-semibold uppercase tracking-widest mb-5 ${group.color}`}>
                 {group.label}
               </h3>
               <div className="space-y-4">

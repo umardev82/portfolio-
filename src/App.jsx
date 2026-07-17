@@ -11,8 +11,7 @@ import Footer      from './components/Footer'
 export default function App() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* Subtle grid texture */}
-      <div className="fixed inset-0 bg-grid opacity-40 pointer-events-none" />
+      <div className="fixed inset-0 bg-grid pointer-events-none" />
       <Navbar />
       <main>
         <Hero />

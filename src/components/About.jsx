@@ -57,7 +57,7 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <div className="glass-card p-8 space-y-4">
-              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">
+              <h3 className="text-sm font-display font-semibold text-slate-400 uppercase tracking-widest mb-6">
                 At a glance
               </h3>
               {highlights.map((point, i) => (
@@ -73,14 +73,14 @@ export default function About() {
                 </motion.div>
               ))}
 
-              <div className="mt-8 pt-6 border-t border-white/[0.06] grid grid-cols-3 gap-4 text-center">
+              <div className="mt-8 pt-6 border-t border-white/[0.07] grid grid-cols-3 gap-4 text-center">
                 {[
                   { n: '2+',   l: 'Years exp.'     },
                   { n: '20+',  l: 'APIs shipped'   },
                   { n: '3',    l: 'SaaS products'  },
                 ].map(({ n, l }) => (
-                  <div key={l}>
-                    <div className="text-2xl font-bold gradient-text">{n}</div>
+                  <div key={l} className="rounded-xl bg-white/[0.03] border border-white/[0.05] p-3">
+                    <div className="text-2xl font-display font-bold gradient-text">{n}</div>
                     <div className="text-xs text-slate-500 mt-1">{l}</div>
                   </div>
                 ))}
